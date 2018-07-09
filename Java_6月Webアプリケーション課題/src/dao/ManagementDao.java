@@ -239,7 +239,7 @@ public class ManagementDao {
 		}
 		return result;
 	}
-	public static ArrayList<ReturnData> getAllGame(){
+	public static ArrayList<ReturnData> getAllData(){
 		ArrayList<ReturnData> resultList = new ArrayList<ReturnData>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
