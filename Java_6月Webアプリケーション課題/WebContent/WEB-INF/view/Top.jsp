@@ -7,7 +7,7 @@
 <title>資格管理くん</title>
 </head>
 <body>
-<header>資格管理くん</header>
+<header><img src="images/資格管理くん.png"></header>
 <div id="con">
 	<a href="/Java_6月Webアプリケーション課題/StudentRegisterServlet">新規学生を登録</a>
 	<p>新しい学生を登録できます。</p>
