@@ -8,7 +8,7 @@
 <title>資格管理くん</title>
 </head>
 <body>
-<header><img src="images/資格管理くん.png"></header>
+<header><a href="/Java_6月Webアプリケーション課題/TopServlet"><img src="images/資格管理くん.png"></a></header>
 <div id="con">
 	<div id="rinks">
 		<a href="/Java_6月Webアプリケーション課題/StudentRegisterServlet">新規学生を登録</a>
@@ -23,7 +23,7 @@
 		<p>資格の取得状況一覧表示できます。</p>
 	</div>
 	<div id="rinks">
-		<a href="/Java_6月Webアプリケーション課題/######">新規資格を登録</a>
+		<a href="/Java_6月Webアプリケーション課題/LicenseManagementServlet">新規資格を登録</a>
 		<p>新しい資格を登録できます。</p>
 	</div>
 </div>

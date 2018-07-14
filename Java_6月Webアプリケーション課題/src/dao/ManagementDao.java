@@ -304,4 +304,52 @@ public class ManagementDao {
 		}
 		return resultList;
 	}
+	public static void newLicenseDao(String key1){
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			// ②JDBCドライバをロードする
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// ③DBMSとの接続を確立する
+			con = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/licensedb?useSSL=false",
+					"licenseuser",
+					"pass");
+			// ④SQL文を作成する
+			String sql = "insert into license(lname) values(?);";
+			// ⑤SQL文を実行するための準備を行う
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, key1);
+
+			// ⑥SQL文を実行してDBMSから結果を受信する
+			pstmt.executeUpdate();
+
+		} catch (ClassNotFoundException e) {
+			System.out.println("JDBCドライバが見つかりません。");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.out.println("DBアクセス時にエラーが発生しました。");
+			e.printStackTrace();
+		} finally {
+			// ⑧DBMSから切断する
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+			} catch (SQLException e) {
+				System.out.println("DBアクセス時にエラーが発生しました。");
+				e.printStackTrace();
+			}
+			try {
+				if (con != null) {
+					con.close();
+				}
+			} catch (SQLException e) {
+				System.out.println("DBアクセス時にエラーが発生しました。");
+				e.printStackTrace();
+			}
+		}
+	}
 }

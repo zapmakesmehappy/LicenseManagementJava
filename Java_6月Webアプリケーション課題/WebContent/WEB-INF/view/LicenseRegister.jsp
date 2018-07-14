@@ -10,12 +10,9 @@
 <body>
 <header><a href="/Java_6月Webアプリケーション課題/TopServlet"><img src="images/資格管理くん2.png"></a></header>
 <div id="con">
-	<h3>登録済みの学生の資格情報を入力してください。</h3>
-	<form action="/Java_6月Webアプリケーション課題/ManagementRegisterResultServlet" method="get">
-	学生　の　名前：<input type="text" name="name"><br>
-	登録する資格名：<input type="text" name="lname"><br>
-	　受　験　日　：<input type="text" name="date">～年～月を年と月を省略して入力してください。(例)29年8月　→2908<br>
-	　合　　　否　：合<input type="radio" name="sof" value="合">否<input type="radio" name="sof" value="否">
+	<h3>新しく登録する資格の名称を入力してください。</h3>
+	<form action="/Java_6月Webアプリケーション課題/LicenseRegisterResultServlet" method="get">
+	資格の名称：<input type="text" name="lname"><br>
 	<input type="submit" value="登録する" class="button">
 	</form>
 	<a href="/Java_6月Webアプリケーション課題/TopServlet">TOPへ戻る</a>

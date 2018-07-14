@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset=UTF-8>
+<link rel="stylesheet" type="text/css" href="/Java_6月Webアプリケーション課題/css/style.css">
 <title>資格管理くん</title>
 </head>
 <body>
-<header>資格管理くん</header>
+<header><a href="/Java_6月Webアプリケーション課題/TopServlet"><img src="images/資格管理くん2.png"></a></header>
 <div id="con">
 <h3>登録成功！</h3>
 	<p>登録に成功しました</p>
