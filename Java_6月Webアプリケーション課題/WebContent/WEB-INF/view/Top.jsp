@@ -9,22 +9,18 @@
 </head>
 <body>
 <header><a href="/Java_6月Webアプリケーション課題/TopServlet"><img src="images/資格管理くん.png"></a></header>
-<div id="con">
+<div id="Tcon">
 	<div id="rinks">
-		<a href="/Java_6月Webアプリケーション課題/StudentRegisterServlet">新規学生を登録</a>
-		<p>新しい学生を登録できます。</p>
+		<a href="/Java_6月Webアプリケーション課題/StudentRegisterServlet"><img src="images/新規学生を登録.png"></a>
 	</div>
 	<div id="rinks">
-		<a href="/Java_6月Webアプリケーション課題/ManagementRegisterServlet">受験データの登録</a>
-		<p>登録した学生に受験データを登録できます。</p>
+		<a href="/Java_6月Webアプリケーション課題/ManagementRegisterServlet"><img src="images/受験データを登録.png"></a>
 	</div>
 	<div id="rinks">
-		<a href="/Java_6月Webアプリケーション課題/All">資格取得状況一覧表示</a>
-		<p>資格の取得状況一覧表示できます。</p>
+		<a href="/Java_6月Webアプリケーション課題/All"><img src="images/資格取得状況一覧表示.png"></a>
 	</div>
 	<div id="rinks">
-		<a href="/Java_6月Webアプリケーション課題/LicenseManagementServlet">新規資格を登録</a>
-		<p>新しい資格を登録できます。</p>
+		<a href="/Java_6月Webアプリケーション課題/LicenseManagementServlet"><img src="images/新規資格を登録.png"></a>
 	</div>
 </div>
 </body>

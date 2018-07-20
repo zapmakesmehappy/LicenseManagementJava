@@ -14,12 +14,13 @@
 <div id="con">
 <%request.setCharacterEncoding("UTF-8");%>
 <%ReturnI i = (ReturnI) request.getAttribute("inum"); %>
+<div class="tab">
 	<table>
 		<tr>
-			<th>生徒名</th>
-			<th>資格名</th>
-			<th>受験日</th>
-			<th>合否</th>
+			<th class="h">生徒名</th>
+			<th class="h">資格名</th>
+			<th class="h">受験日</th>
+			<th class="h">合否</th>
 		</tr>
 		<%String strH[] = new String[i.getI()];
 		for(int h = 0;h < strH.length;h++){
@@ -29,13 +30,14 @@
 		<%for(int j = 0;j < strH.length;j++){ %>
 		<%ReturnData data = (ReturnData) request.getAttribute(strH[j]);%>
 		<tr>
-			<td><%=data.getName() %></td>
-			<td><%=data.getLname() %></td>
-			<td><%=data.getDate() %></td>
-			<td><%=data.getSof() %></td>
+			<td class="d"><%=data.getName() %></td>
+			<td class="d"><%=data.getLname() %></td>
+			<td class="d"><%=data.getDate() %></td>
+			<td class="d"><%=data.getSof() %></td>
 		</tr>
 		<%} %>
 	</table>
+	</div>
 	<a href="/Java_6月Webアプリケーション課題/TopServlet">TOPへ戻る</a>
 	</div>
 </body>
