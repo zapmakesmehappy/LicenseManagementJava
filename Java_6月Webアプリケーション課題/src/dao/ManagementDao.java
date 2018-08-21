@@ -33,6 +33,7 @@ public class ManagementDao {
 
 			// ⑥SQL文を実行してDBMSから結果を受信する
 			pstmt.executeUpdate();
+			
 
 		} catch (ClassNotFoundException e) {
 			System.out.println("JDBCドライバが見つかりません。");
@@ -351,5 +352,73 @@ public class ManagementDao {
 				e.printStackTrace();
 			}
 		}
+	}
+	public static ArrayList<ReturnData> getClassData(int key1,int key2
+		){
+		ArrayList<ReturnData> resultList = new ArrayList<ReturnData>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			// ②JDBCドライバをロードする
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// ③DBMSとの接続を確立する
+			con = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/licensedb?useSSL=false",
+					"licenseuser",
+					"pass");
+			// ④SQL文を作成する
+			String sql = "select student.name,license.lname,management.date,management.sof from student,license,management where student.year = ? and student.class = ?;";
+			// ⑤SQL文を実行するための準備を行う
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(key1, 0);
+			pstmt.setInt(key2, 1);
+			// ⑥SQL文を実行してDBMSから結果を受信する
+			rs = pstmt.executeQuery();
+			// ⑦実行結果を含んだインスタンスからデータを取り出す
+			while(rs.next()==true){
+				String name = rs.getString("name");
+				String lname = rs.getString("lname");
+				int date = rs.getInt("date");
+				String sof = rs.getString("sof");
+				resultList.add(new ReturnData(name,lname,date,sof));
+			}
+
+		} catch (ClassNotFoundException e) {
+			System.out.println("JDBCドライバが見つかりません。");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.out.println("DBアクセス時にエラーが発生しました。");
+			e.printStackTrace();
+		} finally {
+			// ⑧DBMSから切断する
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				System.out.println("DBアクセス時にエラーが発生しました。");
+				e.printStackTrace();
+			}
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+			} catch (SQLException e) {
+				System.out.println("DBアクセス時にエラーが発生しました。");
+				e.printStackTrace();
+			}
+			try {
+				if (con != null) {
+					con.close();
+				}
+			} catch (SQLException e) {
+				System.out.println("DBアクセス時にエラーが発生しました。");
+				e.printStackTrace();
+			}
+		}
+		return resultList;
 	}
 }

@@ -15,16 +15,16 @@ import dto.ReturnData;
 import dto.ReturnI;
 
 /**
- * Servlet implementation class StudentRegisterResultServlet
+ * Servlet implementation class SearchStudentResultServlet
  */
-@WebServlet("/StudentRegisterResultServlet")
-public class StudentRegisterResultServlet extends HttpServlet {
+@WebServlet("/SearchStudentResultServlet")
+public class SearchStudentResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public StudentRegisterResultServlet() {
+    public SearchStudentResultServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,15 +34,21 @@ public class StudentRegisterResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String key1 = request.getParameter("name");
-		String key2 = request.getParameter("year");
-		String key3 = request.getParameter("class");
-		if("".equals(key1) || "".equals(key2) || "".equals(key3)){
+		String Kkey1 = request.getParameter("year");
+		String Kkey2 = request.getParameter("class");
+		int key1 = Integer.parseInt(Kkey1);
+		int key2 = Integer.parseInt(Kkey2);
+
+		if("".equals(key1) || "".equals(key2)){
 			String view = "/WEB-INF/view/StudentRegisterResult2.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
 		}else{
-			ArrayList<ReturnData> resultList = ManagementDao.getAllData();
+			/*ManagementDao.getClassData(key1, key2);
+			String view = "/WEB-INF/view/SearchStudentResult.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			dispatcher.forward(request, response);*/
+			ArrayList<ReturnData> resultList = ManagementDao.getClassData(key1,key2);
 			int i = 0;
 			for(ReturnData result : resultList){
 				String name = result.getName();
@@ -58,11 +64,10 @@ public class StudentRegisterResultServlet extends HttpServlet {
 			//結果画面へフォワード
 			ReturnI ri = new ReturnI(i);
 			request.setAttribute("inum", ri);
-			String view = "/WEB-INF/view/All.jsp";
+			String view = "/WEB-INF/view/SearchStudentResult.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
 		}
-
 	}
 
 	/**
