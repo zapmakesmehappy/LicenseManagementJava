@@ -38,7 +38,6 @@
 		<%} %>
 	</table>
 	</div>
-	<a href="/Java_6月Webアプリケーション課題/SearchStudentServlet">クラス別に表示</a><br>
 	<a href="/Java_6月Webアプリケーション課題/TopServlet">TOPへ戻る</a>
 	</div>
 </body>
