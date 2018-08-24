@@ -12,8 +12,8 @@
 <div id="con">
 <h3>登録成功！</h3>
 	<p>登録に成功しました</p>
-	<a href="/Java_6月Webアプリケーション課題/StudentRegisterServlet">続けて登録する</a>
-	<a href="/Java_6月Webアプリケーション課題/TopServlet">TOPへ戻る</a>
+	<a href="/Java_6月Webアプリケーション課題/StudentRegisterServlet" class="square_btn">続けて登録する</a>
+	<a href="/Java_6月Webアプリケーション課題/TopServlet" class="square_btn">TOPへ戻る</a>
 	</div>
 </body>
 </html>

@@ -10,12 +10,12 @@
 <body>
 <header><a href="/Java_6月Webアプリケーション課題/TopServlet"><img src="images/資格管理くん2.png"></a></header>
 <div id="con">
+	<a href="/Java_6月Webアプリケーション課題/TopServlet" class="back"><img src="images/戻る.png" width="50px" height="50px"></a>
 	<h3>新しく登録する資格の名称を入力してください。</h3>
 	<form action="/Java_6月Webアプリケーション課題/LicenseRegisterResultServlet" method="get">
 	資格の名称：<input type="text" name="lname"><br>
-	<input type="submit" value="登録する" class="button">
+	<input type="submit" value="登録する" class="square_btn">
 	</form>
-	<a href="/Java_6月Webアプリケーション課題/TopServlet">TOPへ戻る</a>
 </div>
 </body>
 </html>

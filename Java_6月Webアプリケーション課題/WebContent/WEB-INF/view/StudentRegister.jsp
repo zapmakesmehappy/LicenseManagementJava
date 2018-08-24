@@ -10,14 +10,14 @@
 <body>
 <header><a href="/Java_6月Webアプリケーション課題/TopServlet"><img src="images/資格管理くん2.png"></a></header>
 <div id="con">
+	<a href="/Java_6月Webアプリケーション課題/TopServlet" class="back"><img src="images/戻る.png" width="50px" height="50px"></a>
 	<h3>登録したい学生の情報を入力してください。</h3>
 	<form action="/Java_6月Webアプリケーション課題/StudentRegisterResultServlet" method="get">
-	名　前：<input type="text" name="name"><br>
-	学　年：<input type="text" name="year"><br>
-	クラス：<input type="text" name="class"><br>
-	<input type="submit" value="登録する" class="button">
+	名　前：<input type="text" name="name"><br><br>
+	学　年：<input type="text" name="year"><br><br>
+	クラス：<input type="text" name="class"><br><br>
+	<input type="submit" value="登録する" class="square_btn">
 	</form>
-	<a href="/Java_6月Webアプリケーション課題/TopServlet">TOPへ戻る</a>
 </div>
 </body>
 </html>

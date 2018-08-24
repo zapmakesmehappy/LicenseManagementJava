@@ -38,7 +38,7 @@
 		<%} %>
 	</table>
 	</div>
-	<a href="/Java_6月Webアプリケーション課題/TopServlet">TOPへ戻る</a>
+	<a href="/Java_6月Webアプリケーション課題/TopServlet" class="square_btn">TOPへ戻る</a>
 	</div>
 </body>
 </html>

@@ -12,6 +12,7 @@
 <div id="con">
 	<h3>エラー</h3>
 	<p>登録に失敗しました。入力値が正しくないか、エラーが発生しました。</p>
+	<a href="/Java_6月Webアプリケーション課題/ManagementRegisterServlet" class="square_btn">やり直す</a>
 	<a href="/Java_6月Webアプリケーション課題/TopServlet">TOPへ戻る</a>
 </div>
 </body>
