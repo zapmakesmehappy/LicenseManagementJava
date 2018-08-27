@@ -18,13 +18,13 @@ import dao.ManagementDao;
 public class ManagementRegisterResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ManagementRegisterResultServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ManagementRegisterResultServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,13 +41,19 @@ public class ManagementRegisterResultServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 		}else{
 			try{
-			int key1 = ManagementDao.searchIdDao(Kkey1);
-			int key2 = ManagementDao.searchLidDao(Kkey2);
-			int key3 = Integer.parseInt(Kkey3);
-			ManagementDao.registerlicenseDao(key1, key2, key3, key4);
-			String view = "/WEB-INF/view/ManagementRegisterResult.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			dispatcher.forward(request, response);
+				int key1 = ManagementDao.searchIdDao(Kkey1);
+				int key2 = ManagementDao.searchLidDao(Kkey2);
+				if(key1 == 0 || key2 == 0){
+					String view = "/WEB-INF/view/ManagementRegisterResult3.jsp";
+					RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+					dispatcher.forward(request, response);
+				}else{
+					int key3 = Integer.parseInt(Kkey3);
+					ManagementDao.registerlicenseDao(key1, key2, key3, key4);
+					String view = "/WEB-INF/view/ManagementRegisterResult.jsp";
+					RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+					dispatcher.forward(request, response);
+				}
 			}catch(NumberFormatException e){
 				String view = "/WEB-INF/view/ManagementRegisterResult2.jsp";
 				RequestDispatcher dispatcher = request.getRequestDispatcher(view);

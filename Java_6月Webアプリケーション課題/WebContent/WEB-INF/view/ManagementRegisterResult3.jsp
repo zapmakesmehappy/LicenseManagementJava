@@ -11,7 +11,7 @@
 <header><a href="/Java_6月Webアプリケーション課題/TopServlet"><img src="images/資格管理くん2.png"></a></header>
 <div id="con">
 	<h3>エラー</h3>
-	<p>登録に失敗しました。未入力箇所がないかもう一度確認してください。。</p>
+	<p>登録に失敗しました。入力された学生名か資格名が登録されていません。</p>
 	<a href="/Java_6月Webアプリケーション課題/ManagementRegisterServlet" class="square_btn">やり直す</a>
 	<a href="/Java_6月Webアプリケーション課題/TopServlet"class="square_btn">TOPへ戻る</a>
 </div>
